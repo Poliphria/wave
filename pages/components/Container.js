@@ -3,6 +3,7 @@ import {
     keyframes,
     usePrefersReducedMotion
 } from '@chakra-ui/react'
+import theme, { Theme } from '@chakra-ui/theme'
 
 const gradient = keyframes`
       0% { background-position: 0% }
@@ -18,7 +19,7 @@ export const Container = (props) => {
             direction="column"
             alignItems="center"
             justifyContent="flex-start"
-            bgGradient="linear(to-r, #F1354C, #B32189, #9A2D53)"
+            bgGradient="linear(to-r, purp.100, purp.200)"
             position="absolute"
             // bgColor="blackAlpha.100"
             bgSize="300% 300%"
