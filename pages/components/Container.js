@@ -1,31 +1,31 @@
 import {
     Flex,
-    keyframes,
-    usePrefersReducedMotion
+    // keyframes,
+    // usePrefersReducedMotion
 } from '@chakra-ui/react'
 import theme, { Theme } from '@chakra-ui/theme'
 
-const gradient = keyframes`
-      0% { background-position: 0% }
-      100% { background-position: 100% }
-      `;
+// const gradient = keyframes`
+//       0% { background-position: 0% }
+//       100% { background-position: 100% }
+//       `;
 
 export const Container = (props) => {
-    const prefersReducedMotion = usePrefersReducedMotion()
-    const gradientAnimation = prefersReducedMotion ? undefined : `${gradient} 9s alternate infinite`
+    // const prefersReducedMotion = usePrefersReducedMotion()
+    // const gradientAnimation = prefersReducedMotion ? undefined : `${gradient} 9s alternate infinite`
 
     return (
         <Flex
             direction="column"
             alignItems="center"
             justifyContent="flex-start"
-            bgGradient="linear(to-r, purp.100, purp.200)"
+            // bgGradient="linear(to-r, purp.100, purp.200)"
             position="absolute"
             // bgColor="blackAlpha.100"
             bgSize="300% 300%"
             width="100vw"
             height="100vh"
-            animation={gradientAnimation}
+            // animation={gradientAnimation}
             {...props}
         />
     )

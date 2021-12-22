@@ -5,9 +5,9 @@ import {
 } from "@chakra-ui/react"
 
 const WaveSurferContainer = (props) => {
-    // Wavesurfer will update all the time, so react will keep rendering
+    // Wavesurfer will update all the time, so react will keep rendering    
     // a new DOM child node. Need to assign a ref to existing child node so 
-    // new ones don't be made. 
+    // new ones aren't made. 
     const waveFormRef = useRef()
 
     // options for wavesurfer
