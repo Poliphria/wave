@@ -19,6 +19,7 @@ export const Container = (props) => {
             direction="column"
             alignItems="center"
             justifyContent="flex-start"
+            bgColor="#f7f7f7"
             // bgGradient="linear(to-r, purp.100, purp.200)"
             position="absolute"
             // bgColor="blackAlpha.100"
