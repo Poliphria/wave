@@ -3,7 +3,7 @@
 // First visit should show an upload button and a text box for youtube link
 
 import { Container } from "./components/Container"
-import { StackDivider, Text, VStack } from "@chakra-ui/layout"
+import { StackDivider, Text, VStack, Box } from "@chakra-ui/layout"
 import { Button } from "@chakra-ui/button"
 import { Input } from "@chakra-ui/input"
 import "@fontsource/rubik"
@@ -19,20 +19,24 @@ export default function Home() {
         justify="center"
       >
         <Button
-          bgGradient={`linear(to-r, #4c2a85, #bcedf6)`}
-          textColor="#f7f7f7" 
+          textColor="black" 
           borderRadius="16px"
           height="64px"
-          width="xs"
+          width="sm"
           paddingLeft="16px"
           paddingRight="16px"
           fontSize="x-large"
-          boxShadow="lg"
         >
           Upload
         </Button>
         <Text fontSize="x-large" fontSize="xx-large">Or</Text>
-        <Input placeholder="YouTube Link" size="lg" fontSize="xl" borderWidth="2px"/>
+        <Input 
+          placeholder="YouTube Link" 
+          size="lg" 
+          fontSize="xl" 
+          borderWidth="2px" 
+          borderRadius="8px" 
+        />
       </VStack>
     </Container>
   )
