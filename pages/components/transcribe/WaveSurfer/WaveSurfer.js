@@ -30,3 +30,5 @@ const WaveSurferContainer = (props) => {
         <Box></Box>
     )
 }
+
+export default WaveSurferContainer
