@@ -1,17 +1,16 @@
-// Entrance point to the app itself. 
+// Entrance point to the app itself.
 // If user has been here before then check cache for previous visit's options etc
 // First visit should show an upload button and a text box for youtube link
 
-import { Container } from "./components/Container"
-import { StackDivider, Text, VStack, Box } from "@chakra-ui/layout"
-import { Button } from "@chakra-ui/button"
-import { Input } from "@chakra-ui/input"
-import "@fontsource/rubik"
+import { Container } from "./components/Container";
+import { Text, VStack } from "@chakra-ui/layout";
+import { Button } from "@chakra-ui/button";
+import YoutubeLink from "./components/Home/YoutubeLink";
+import "@fontsource/rubik";
 export default function Home() {
   return (
-    <Container justifyContent="center" fontFamily="Rubik">
+    <Container justifyContent="center" fontFamily="Rubik" fontSize="xl">
       <VStack
-        //divider={<StackDivider borderColor="gray.200" />}
         spacing="8"
         align="center"
         width="lg"
@@ -19,25 +18,21 @@ export default function Home() {
         justify="center"
       >
         <Button
-          textColor="black" 
+          textColor="black"
           borderRadius="16px"
-          height="64px"
+          height="48px"
           width="sm"
           paddingLeft="16px"
           paddingRight="16px"
-          fontSize="x-large"
+          boxShadow="0 5px 10px rgba(154,160,185,.05), 0 15px 30px rgba(166,173,201,.2);"
         >
           Upload
         </Button>
-        <Text fontSize="x-large" fontSize="xx-large">Or</Text>
-        <Input 
-          placeholder="YouTube Link" 
-          size="lg" 
-          fontSize="xl" 
-          borderWidth="2px" 
-          borderRadius="8px" 
-        />
+        <Text>
+          Or
+        </Text>
+        <YoutubeLink />
       </VStack>
     </Container>
-  )
+  );
 }

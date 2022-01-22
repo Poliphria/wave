@@ -7,7 +7,6 @@ export const TranscribeContainer = (props) => {
     return (
         <Flex>
             <WaveSurfer />
-            <EQ />
         </Flex>
     )
 }
