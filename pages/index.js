@@ -3,11 +3,14 @@
 // First visit should show an upload button and a text box for youtube link
 
 import { Container } from "./components/Container";
-import { Text, VStack } from "@chakra-ui/layout";
+import { Text, VStack, Flex } from "@chakra-ui/layout";
 import { Button } from "@chakra-ui/button";
+import { useColorMode, useColorModeValue } from "@chakra-ui/react";
 import YoutubeLink from "./components/Home/YoutubeLink";
 import "@fontsource/rubik";
 export default function Home() {
+  const { colorMode, toggleColorMode } = useColorMode();
+
   return (
     <Container justifyContent="center" fontFamily="Rubik" fontSize="xl">
       <VStack
@@ -16,6 +19,7 @@ export default function Home() {
         width="lg"
         height="lg"
         justify="center"
+        flexGrow="1"
       >
         <Button
           textColor="black"
@@ -33,6 +37,17 @@ export default function Home() {
         </Text>
         <YoutubeLink />
       </VStack>
+      <Flex 
+        justify="end"
+        width="100%"  
+        mr="16"
+        mb="8"
+      >
+        <Button onClick={toggleColorMode} >
+          Toggle {colorMode === 'light' ? 'Dark' : 'Light'}
+        </Button>
+      </Flex>
+
     </Container>
   );
 }
