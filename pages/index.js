@@ -6,6 +6,7 @@ import { Container } from "./components/Container";
 import { Text, VStack, Flex } from "@chakra-ui/layout";
 import { Button } from "@chakra-ui/button";
 import { useColorMode, useColorModeValue } from "@chakra-ui/react";
+import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 import YoutubeLink from "./components/Home/YoutubeLink";
 import "@fontsource/rubik";
 export default function Home() {
@@ -22,10 +23,9 @@ export default function Home() {
         flexGrow="1"
       >
         <Button
-          textColor="black"
           borderRadius="16px"
-          height="48px"
-          width="sm"
+          width={40}
+          height={12}
           paddingLeft="16px"
           paddingRight="16px"
           boxShadow="0 5px 10px rgba(154,160,185,.05), 0 15px 30px rgba(166,173,201,.2);"
@@ -38,13 +38,13 @@ export default function Home() {
         <YoutubeLink />
       </VStack>
       <Flex 
-        justify="end"
+        justify="flex-end"
         width="100%"  
         mr="16"
         mb="8"
       >
         <Button onClick={toggleColorMode} >
-          Toggle {colorMode === 'light' ? 'Dark' : 'Light'}
+          {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
         </Button>
       </Flex>
 

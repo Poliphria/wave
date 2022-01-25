@@ -10,7 +10,6 @@ export const Container = (props) => {
             direction="column"
             alignItems="center"
             justifyContent="flex-start"
-            bgColor="#f7f7f7"
             position="absolute"
             bgSize="300% 300%"
             width="100vw"
