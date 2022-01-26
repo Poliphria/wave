@@ -5,6 +5,7 @@ import {
   Button,
   InputGroup,
   InputRightElement,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import { useForm } from "react-hook-form";
 import React, { useState } from "react";
@@ -17,6 +18,8 @@ export default function YoutubeLinkHookForm() {
     register,
     formState: { errors },
   } = useForm();
+
+  const bg = useColorModeValue('white', 'gray.400')
   const router = useRouter();
   const [value, setValue] = useState("");
   const handleChange = (event) => setValue(event.target.value);
@@ -36,7 +39,7 @@ export default function YoutubeLinkHookForm() {
               validate: ytdl.validateURL(value)
             })} */
             pr="4.5rem"
-            type="text"
+            type="textz"
             value={value}
             onChange={handleChange}
             placeholder="YouTube Link"
