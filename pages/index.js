@@ -5,9 +5,9 @@
 import { Container } from "./components/Container";
 import { Text, VStack, Flex } from "@chakra-ui/layout";
 import { Button } from "@chakra-ui/button";
-import { useColorMode, useColorModeValue } from "@chakra-ui/react";
+import { useColorMode } from "@chakra-ui/react";
 import { MoonIcon, SunIcon } from "@chakra-ui/icons";
-import YoutubeLink from "./components/Home/YoutubeLink";
+import YoutubeLinkHookForm from "./components/Home/YoutubeLink";
 import "@fontsource/rubik";
 export default function Home() {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -20,7 +20,7 @@ export default function Home() {
         width="lg"
         height="lg"
         justify="center"
-        flexGrow="1"
+        flexGrow="4"
       >
         <Button
           borderRadius="16px"
@@ -28,22 +28,27 @@ export default function Home() {
           height={12}
           paddingLeft="16px"
           paddingRight="16px"
-          boxShadow="0 5px 10px rgba(154,160,185,.05), 0 15px 30px rgba(166,173,201,.2);"
+          shadow="xl"
+          _focus={{boxShadow: "none", shadow: "xl"}}
         >
           Upload
         </Button>
         <Text>
           Or
         </Text>
-        <YoutubeLink />
+        <YoutubeLinkHookForm />
       </VStack>
       <Flex 
         justify="flex-end"
-        width="100%"  
-        mr="16"
-        mb="8"
+        width="100%"
+        flexGrow="1"
       >
-        <Button onClick={toggleColorMode} >
+        <Button 
+          onClick={toggleColorMode} 
+          alignSelf="flex-end"
+          mr="1rem"
+          mb="1rem"
+        >
           {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
         </Button>
       </Flex>
