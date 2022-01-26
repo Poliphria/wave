@@ -5,41 +5,38 @@ import {
   Button,
   InputGroup,
   InputRightElement,
-  useColorModeValue,
 } from "@chakra-ui/react";
 import { useForm } from "react-hook-form";
 import React, { useState } from "react";
 import ytdl from "ytdl-core";
-import { useRouter } from "next/router";
 
 export default function YoutubeLinkHookForm() {
+  // react-hook-form stuff
   const {
-    handleSubmit,
-    register,
-    formState: { errors },
+    handleSubmit, //takes as input onSubmit
+    register, // function used to link an input to form state
+    formState: { errors }, 
   } = useForm();
 
-  const bg = useColorModeValue('white', 'gray.400')
-  const router = useRouter();
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState(""); // variable to hold input string
   const handleChange = (event) => setValue(event.target.value);
 
-  function onSubmit(value) {
-
+  function onSubmit() {
+    console.log(`This is the link: ${value} \nThis is the validation ${ytdl.validateURL(value)}`)
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit(value))}>
+    <form onSubmit={handleSubmit(onSubmit)}>
       <FormControl isInvalid={errors.link}>
         <InputGroup width="lg">
           <Input
             id="link"
-            /* {...register("link", {
+            {...register("link", {
               required: "This is required",
-              validate: ytdl.validateURL(value)
-            })} */
+              validate: link => ytdl.validateURL(link) || 'Invalid YouTube Link' // react-hook-form validation needs to be a function and then or'd with err msg
+            })}
             pr="4.5rem"
-            type="textz"
+            type="text"
             value={value}
             onChange={handleChange}
             placeholder="YouTube Link"
