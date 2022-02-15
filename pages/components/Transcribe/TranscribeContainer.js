@@ -1,16 +1,13 @@
-import { VStack, Button, Input, StackDivider } from "@chakra-ui/layout";
+import { 
+Flex
+} from "@chakra-ui/layout";
+import WaveSurfer from "./WaveSurfer/WaveSurfer"
 
 export const TranscribeContainer = (props) => {
     return (
-        <VStack
-            divider={<StackDivider borderColor="gray.200" />}
-            spacing={8}
-            align="center"
-            {...props}
-        >
-            <Button>Test</Button>
-            <Button>Test</Button>
-        </VStack>
+        <Flex>
+            <WaveSurfer />
+        </Flex>
     )
 }
 
