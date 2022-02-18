@@ -9,6 +9,7 @@ import { useColorMode } from "@chakra-ui/react";
 import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 import YoutubeLinkHookForm from "./components/Home/YoutubeLink";
 import "@fontsource/rubik";
+
 export default function Home() {
   const { colorMode, toggleColorMode } = useColorMode();
   // Create a reference to the hidden file input element
@@ -25,6 +26,8 @@ export default function Home() {
     const fileUploaded = event.target.files[0];
     console.log(fileUploaded.name)
   };
+
+  // TODO: Refactor react hook form so that it works with both file and link. useFormContext helpful here
 
   return (
     <Container justifyContent="center" fontFamily="Rubik" fontSize="xl">
@@ -48,6 +51,7 @@ export default function Home() {
         >
           Upload
         </Button>
+        {/*TODO: Add validation to file upload. Must be less than 15MB and can only be MP3, AIFF, FLAC */}
         <input
           type="file"
           ref={hiddenFileInput}
