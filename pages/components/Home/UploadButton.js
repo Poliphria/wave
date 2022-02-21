@@ -1,3 +1,4 @@
+// Button used to upload an audio file and send to '/transcribe' page
 import { Box, Button } from "@chakra-ui/react";
 import React from "react";
 
